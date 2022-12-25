@@ -10,11 +10,11 @@ class Trail:
     def __init__(self):
         self.head = None
         self.tail = None
-        self.next_stop = None
+        self.current = None
 
 
 
-    def set_locations(self, str_list: list[str]) -> None:
+    def add_locations(self, str_list: list[str]) -> None:
         # Convert from a list of strings to a list of locations
         location_list = []
         for str_location in str_list:
@@ -35,6 +35,8 @@ class Trail:
                 # assign tail and connect to previous node.
                 self.tail = location_list[i_loc]
                 self.tail.prev = location_list[i_loc-1]
+        # make the current pointer point at something
+        self.current = self.head
     
     def display_locations(self):
         current_node = self.head
@@ -42,6 +44,6 @@ class Trail:
             print (current_node.name)
             current_node = current_node.next
 
-    def update_next_destination(self):
-        # TODO
-        pass
+    def update_current_stop(self):
+        if self.current != None:
+            self.current = self.current.next
