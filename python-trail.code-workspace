@@ -12,7 +12,7 @@
 				"name": "Launch test file",
 				"type": "python",
 				"request": "launch",
-				"program": "./test_trail.py",
+				"program": "./test_global.py",
 				"console": "integratedTerminal"
 			}
 		]
